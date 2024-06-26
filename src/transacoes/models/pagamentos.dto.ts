@@ -14,6 +14,9 @@ export class Pagamentos extends Document {
 
     @Prop()
     descricao: string;
+
+    @Prop()
+    imageUrl?: string;
 }
 
 export const PagamentosFactory = SchemaFactory.createForClass(Pagamentos);

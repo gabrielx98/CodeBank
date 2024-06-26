@@ -7,6 +7,7 @@ export class Pagamento {
     readonly contaId: string;
 
     @IsNumber()
+    @Type(() => Number)
     @Min(0)
     readonly valor: number;
 
@@ -17,7 +18,7 @@ export class Pagamento {
     @IsString()
     readonly descricao: string;
 
-    /*@IsOptional()
+    @IsOptional()
     @IsString()
-    readonly imageUrl?: string;*/
+    readonly imageUrl?: string;
 }
