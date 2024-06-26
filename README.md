@@ -45,6 +45,7 @@ Para realizar operações é necessário cadastrar uma conta
 
 Para realizar Transações
 - Pagar - transacoes/pagar (POST)
+- Pagar com Imagem - transacoes/pagarComImagem (POST)
 
 Para Gerar extrato de operações
 - Relatório - relatorios/transacoesByBody ou relatorios/transacoesByQuery (GET)
