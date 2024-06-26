@@ -1,14 +1,14 @@
-## Description
+## Descrição
 
 Api desenvolvida em [Nest](https://github.com/nestjs/nest) para simular operações bancarias simples.
 
-## Installation
+## Instalação
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Rodando o app
 
 ```bash
 # development
@@ -21,7 +21,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Testar
 
 ```bash
 # unit tests
@@ -50,6 +50,6 @@ Para realizar Transações
 Para Gerar extrato de operações
 - Relatório - relatorios/transacoesByBody ou relatorios/transacoesByQuery (GET)
 
-## License
+## Licença
 
 [MIT licensed](LICENSE).
