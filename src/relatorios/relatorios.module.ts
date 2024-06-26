@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { RelatoriosService } from './relatorios.service';
 import { RelatoriosController } from './relatorios.controller';
-import { PagamentosModule } from '../pagamentos/pagamentos.module';
+import { TransacoesModule } from '../transacoes/transacoes.module';
 
 @Module({
-  imports: [PagamentosModule],
+  imports: [TransacoesModule],
   controllers: [RelatoriosController],
   providers: [RelatoriosService],
 })

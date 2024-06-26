@@ -6,7 +6,7 @@ import { Pagamento } from './models/pagamentos.model';
 import { ContasService } from '../contas/contas.service';
 
 @Injectable()
-export class PagamentosService {
+export class TransacoesService {
     constructor(
     @InjectModel(Pagamentos.name) private pagamentosModel: Model<Pagamentos>,
     private contasService: ContasService

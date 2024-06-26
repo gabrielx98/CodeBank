@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { PagamentosService } from '../pagamentos/pagamentos.service';
+import { TransacoesService } from '../transacoes/transacoes.service';
 
 @Injectable()
 export class RelatoriosService {
-  constructor(private pagamentosService: PagamentosService) {}
+  constructor(private pagamentosService: TransacoesService) {}
 
   async generate(contaId: string, dataInicial: Date, dataFinal: Date) {
     const pagamentos = await this.pagamentosService.findByAccountAndDateRange(contaId, dataInicial, dataFinal);
