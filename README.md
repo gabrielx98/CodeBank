@@ -37,7 +37,7 @@ $ npm run test:cov
 ## Utilização
 
 Para utilização é necessário realizar o cadastro de usuários e efetuar o login
-- Cadastro - usuarios/cadastrar (POST)
+- Cadastro - usuarios/registrar (POST)
 - Login - usuarios/login (POST)
 
 Para realizar operações é necessário cadastrar uma conta

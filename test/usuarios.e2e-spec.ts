@@ -5,6 +5,10 @@ import { AppModule } from './../src/app.module';
 
 describe('UsuariosController (e2e)', () => {
     let app: INestApplication;
+    const usuario = {
+        username: 'testeUsuarios',
+        password: 'senhasTeste',
+    };
 
     beforeEach(async () => {
         const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -20,14 +24,9 @@ describe('UsuariosController (e2e)', () => {
         await app.close();
     });
 
-    it('/usuarios/cadastrar (POST)', async () => {
-        const usuario = {
-            username: 'usuario',
-            password: 'senha',
-        };
-
+    it('/usuarios/registrar (POST)', async () => {
         const response = await request(app.getHttpServer())
-            .post('/usuarios/cadastrar')
+            .post('/usuarios/registrar')
             .send(usuario);
 
         expect(response.status).toBe(201);
@@ -37,16 +36,11 @@ describe('UsuariosController (e2e)', () => {
     });
 
     it('/usuarios/login (POST) ', async () => {
-        const usuario = {
-            username: 'usuario',
-            password: 'senhas',
-        };
-
         const response = await request(app.getHttpServer())
             .post('/usuarios/login')
             .send(usuario);
 
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(201);
         expect(response.body).toHaveProperty('access_token');
     });
 });

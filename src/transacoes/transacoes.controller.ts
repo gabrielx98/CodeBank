@@ -33,6 +33,6 @@ export class TransacoesController {
 
     private async uploadFileToS3(file: Express.Multer.File): Promise<string> {
         // lógica de upload para o S3 aqui, não possuo serviço aws S3
-        return `https://aws.amazon.com/pt/s3/files/${file.originalname}.jpg`;
+        return `https://aws.amazon.com/pt/s3/files/file.jpg`;
     }
 }
