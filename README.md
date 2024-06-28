@@ -48,7 +48,7 @@ Para realizar Transações
 - Pagar com Imagem - transacoes/pagarComImagem (POST)
 
 Para Gerar extrato de operações
-- Relatório - relatorios/transacoesByBody ou relatorios/transacoesByQuery (GET)
+- Relatório - relatorios/transacoes (GET)
 
 ## Licença
 

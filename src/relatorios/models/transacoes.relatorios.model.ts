@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsDate, IsNotEmpty, Min, IsOptional } from 'class-validator';
+import { IsString, IsNumber, IsDate, IsNotEmpty, Min, IsOptional, IsDateString } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class RelatorioTransacoes {
@@ -6,11 +6,11 @@ export class RelatorioTransacoes {
     @IsNotEmpty()
     readonly contaId: string;
 
-    @IsDate()
-    @Type(() => Date)
+    @IsNotEmpty()
+    @IsDateString()
     readonly dataInicial: Date;
 
-    @IsDate()
-    @Type(() => Date)
+    @IsNotEmpty()
+    @IsDateString()
     readonly dataFinal: Date;
 }

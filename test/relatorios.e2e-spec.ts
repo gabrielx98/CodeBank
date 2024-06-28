@@ -7,8 +7,7 @@ describe('RelatoriosController (e2e)', () => {
     let app: INestApplication;
     let token: string;
     let contaId: string;
-    const dataInicial = '2024-01-01T14:30:00.000Z';
-    
+        
     beforeEach(async () => {
         const moduleFixture: TestingModule = await Test.createTestingModule({
             imports: [AppModule],
@@ -40,29 +39,18 @@ describe('RelatoriosController (e2e)', () => {
         await app.close();
     });
 
-    it('/relatorios/transacoesByQuery (GET)', async () => {
+    it('/relatorios/transacoes (GET)', async () => {
+        const filtro = {
+            contaId: contaId,
+            dataInicial: new Date().toISOString(),
+            dataFinal: new Date().toISOString()
+        }
+
         const response = await request(app.getHttpServer())
-            .get(`/relatorios/transacoesByQuery`)
+            .get(`/relatorios/transacoes`)
             .set('Authorization', `Bearer ${token}`)
-            .field('contaId', contaId)
-            .field('dataFinal', dataInicial)
-            .field('dataInicial', new Date().toISOString())
-            ;
-
-        expect(response.status).toBe(200);
-        expect(response.body).toHaveProperty('pagamentos');
-        expect(response.body).toHaveProperty('total');
-    });
-
-    it('/relatorios/transacoesByBody (GET)', async () => {
-        const response = await request(app.getHttpServer())
-            .get(`/relatorios/transacoesByQuery`)
-            .set('Authorization', `Bearer ${token}`)
-            .field('contaId', contaId)
-            .field('dataFinal', dataInicial)
-            .field('dataInicial', new Date().toISOString())
-            ;
-
+            .send(filtro);
+           
         expect(response.status).toBe(200);
         expect(response.body).toHaveProperty('pagamentos');
         expect(response.body).toHaveProperty('total');
